@@ -1,0 +1,6 @@
+{
+    "mongoURI": "mongodb://localhost:27017/resume_ranking",
+    "jwtSecret": "resume_ranking_secret_token",
+    "jwtExpiration": 3600
+  }
+  
