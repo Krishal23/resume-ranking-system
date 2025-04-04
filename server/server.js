@@ -1,27 +1,36 @@
-const express = require('express');
-const connectDB = require('./config/db').default;
-const cors = require('cors');
-const path = require('path');
+import dotenv from 'dotenv';
+dotenv.config(); 
 
-// Initialize express app
+import express, { json, static as serveStatic } from 'express';
+import connectDB from './config/db.js';
+import cors from 'cors';
+import { join, resolve } from 'path';
+import { existsSync, mkdirSync } from 'fs';
+import resumesRouter from './routes/api/resumes.js';
+import companiesRouter from './routes/api/companies.js';
+
 const app = express();
 
-// Connect to Database
 connectDB();
+
+
+const uploadsDir = join(process.cwd(), 'uploads');
+if (!existsSync(uploadsDir)) {
+  mkdirSync(uploadsDir);
+}
 
 // Middleware
 app.use(cors());
-app.use(express.json({ extended: false }));
+app.use(json({ extended: false }));
 
-// Define Routes
-app.use('/api/resumes', require('./routes/api/resumes'));
-app.use('/api/companies', require('./routes/api/companies'));
+//routes
+app.use('/api/resumes', resumesRouter);
+app.use('/api/companies', companiesRouter);
 
-// Serve static assets in production
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(serveStatic('client/build'));
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
+    res.sendFile(resolve(process.cwd(), 'client', 'build', 'index.html'));
   });
 }
 

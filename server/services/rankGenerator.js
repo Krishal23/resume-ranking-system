@@ -1,6 +1,6 @@
-import { runPythonScript } from '../utils/pythonRunner';
+import { runPythonScript } from '../utils/pythonRunner.js';
 
-const generateRankingScore = async (resumeData, companyData) => {
+export const generateRankingScore = async (resumeData, companyData) => {
   try {
     const resumeJson = JSON.stringify(resumeData);
     const companyJson = JSON.stringify(companyData);
@@ -18,7 +18,7 @@ const generateRankingScore = async (resumeData, companyData) => {
   }
 };
 
-const generateRankings = async (resumeData, companies) => {
+export const generateRankings = async (resumeData, companies) => {
   try {
     const rankings = [];
     
@@ -47,7 +47,4 @@ const generateRankings = async (resumeData, companies) => {
   }
 };
 
-export default {
-  generateRankingScore,
-  generateRankings
-};
+

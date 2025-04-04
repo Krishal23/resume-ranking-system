@@ -1,5 +1,9 @@
-import { verify } from 'jsonwebtoken';
-import { get } from 'config';
+import jwt from 'jsonwebtoken';
+import config from 'config';  
+
+const { get } = config;
+const { verify } = jwt;
+
 
 export default function(req, res, next) {
   const token = req.header('x-auth-token');

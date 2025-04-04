@@ -1,0 +1,46 @@
+
+
+Sarthak Kushwah
+91-9752404540|sarthakkushwah95@gmail.com
+Education
+•
+Indian Institute of Technology PatnaBihta, Bihar, India
+Bachelor of Technology in Mathematics and Computing, 2nd Year, CGPA: 7.73August 2023 – May 2027
+•
+Bright Convent Hr. Sec. SchoolMorena, M.P., India
+Senior Secondary (Class 12), MP Board, Percentage: 84.0%April 2022 – May 2023
+•
+Bright Convent Hr. Sec. SchoolMorena, M.P., India
+Secondary (Class 10), MP Board, Percentage: 75.2%April 2020 – May 2021
+Experience
+•
+Growth Intern and MentorJune 2023 – July 2023
+FACT APPRemote
+–Managed a platform connecting 30,000+ mentors and students for improved academic networking.
+–Guided 50+ students during JOSAA counseling, optimizing their college selection.
+–Led a marketing campaign, achieving a 40% increase in user acquisition and a 25% boost in engagement.
+–Hosted a webinar for 200+ students, effectively promoting IIT Patna among 23 IITs.
+Projects
+•
+Simple Assembler and Emulator|C++, File Handling, Data StructuresNovember 2024
+–Developed a two-pass assembler to convert assembly code into machine code, generating object and listing files
+with error diagnostics.
+–Implemented an emulator to execute machine code, simulating SIMPLE machine operations, including register
+and stack manipulations.
+–Enhanced usability with debugging commands like-trace,-before, and-afterto inspect memory states and
+track execution.
+–Validated functionality using custom assembly programs like bubble sort and Kadane’s algorithm.
+Skills Summary
+•Programming & Tools:C, C++, Python, HTML, CSS, SQL, JavaScript, Google Colab
+•Libraries/Frameworks:NumPy, Seaborn, MATLAB, Pandas
+•Relevant Courses:Data Science, DSA, Machine Learning, DBMS, Computer Architecture
+•Interests:Web Development, Machine Learning, Competitive Programming
+Achievements
+•Pupil (max.  rating 1383) on Codeforces.January 2025
+•Achieved Overall Rank 500 in Codeforces Round 978 (Div.  2).October 2024
+•SecuredAIR 9500in JEE Advanced, ranking in the top1.0%.August 2023
+PORs and Co-Curricular Activities
+•NSS Volunteer:Actively participated in community service initiatives at IIT Patna.August 2023 – May
+2024
+•Volunteer:Contributed to events like Infinito, Anwesha, and Celesta.
+•Student Co-Mentor:Guided freshers in academics and extracurriculars.November 2022

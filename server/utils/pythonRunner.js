@@ -1,7 +1,12 @@
-import { spawn } from 'child_process';
-import { join } from 'path';
+import {  spawn } from 'child_process';
+import { join,dirname } from 'path';
+import { fileURLToPath } from 'url'; 
 
-const runPythonScript = (scriptName, args = []) => {
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+
+export const runPythonScript = (scriptName, args = []) => {
   return new Promise((resolve, reject) => {
     const scriptPath = join(__dirname, '..', 'python', scriptName);
     const pythonProcess = spawn('python', [scriptPath, ...args]);
@@ -36,6 +41,3 @@ const runPythonScript = (scriptName, args = []) => {
   });
 };
 
-export default {
-  runPythonScript
-};

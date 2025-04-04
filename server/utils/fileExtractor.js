@@ -1,13 +1,13 @@
-import pdfParse from 'pdf-parse';
+
 import { readFileSync } from 'fs';
 import { extname } from 'path';
+import { parsePDF } from './pdfParser.js';
+
 
 
 const extractTextFromPDF = async (filePath) => {
   try {
-    const dataBuffer = readFileSync(filePath);
-    const data = await pdfParse(dataBuffer);
-    return data.text;
+    return await parsePDF(filePath);
   } catch (error) {
     console.error('Error extracting text from PDF:', error);
     throw new Error('Failed to extract text from PDF');
@@ -15,7 +15,7 @@ const extractTextFromPDF = async (filePath) => {
 };
 
 
-const extractTextFromFile = async (filePath) => {
+export const extractTextFromFile = async (filePath) => {
   const extension = extname(filePath).toLowerCase();
   
   switch (extension) {
@@ -32,7 +32,3 @@ const extractTextFromFile = async (filePath) => {
   }
 };
 
-export default {
-  extractTextFromPDF,
-  extractTextFromFile
-};

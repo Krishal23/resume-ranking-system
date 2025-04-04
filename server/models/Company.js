@@ -1,6 +1,6 @@
 import { Schema, model } from 'mongoose';
 
-const CompanySchema = new Schema({
+export const CompanySchema = new Schema({
   name: {
     type: String,
     required: true,
@@ -36,4 +36,6 @@ const CompanySchema = new Schema({
   }
 });
 
-export default Company = model('Company', CompanySchema);
+
+const Company = model('Company', CompanySchema);
+export default Company;

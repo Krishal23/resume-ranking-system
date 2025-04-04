@@ -1,3 +1,4 @@
+import mongoose from 'mongoose';
 import { Schema, model } from 'mongoose';
 
 const ResumeSchema = new Schema({
@@ -52,4 +53,5 @@ const ResumeSchema = new Schema({
   }
 });
 
-export default Resume = model('Resume', ResumeSchema);
+const Resume = model('Resume', ResumeSchema);
+export default Resume;

@@ -1,8 +1,8 @@
-import { runPythonScript } from '../utils/pythonRunner';
-import { extractTextFromFile } from '../utils/fileExtractor';
+import { runPythonScript } from '../utils/pythonRunner.js';
+import { extractTextFromFile } from '../utils/fileExtractor.js';
 
 
-const parseResumeText = async (resumeText) => {
+export const parseResumeText = async (resumeText) => {
   try {
     const result = await runPythonScript('resume_parser.py', [resumeText]);
     return result;
@@ -13,15 +13,12 @@ const parseResumeText = async (resumeText) => {
 };
 
 
-const parseResumeFile = async (filePath) => {
+export const parseResumeFile = async (filePath) => {
   try {
     // Extract text from file
     const resumeText = await extractTextFromFile(filePath);
-    
-    // Parse the extracted text
     const parsedResume = await parseResumeText(resumeText);
     
-    // Add the original text to the parsed data
     return {
       ...parsedResume,
       resumeText
@@ -32,7 +29,3 @@ const parseResumeFile = async (filePath) => {
   }
 };
 
-export default {
-  parseResumeText,
-  parseResumeFile
-};
