@@ -3,8 +3,16 @@ import json
 import re
 
 def calculate_score(resume_data, company_data):
-    total_score = 0
+    """
+    Calculate the overall matching score between a resume and company requirements.
     
+    Args:
+        resume_data: Dictionary containing resume information
+        company_data: Dictionary containing company requirements
+        
+    Returns:
+        Float: The calculated matching score (0-100)
+    """
     # Weight factors for different criteria
     weights = {
         'skills': 0.35,
@@ -13,23 +21,28 @@ def calculate_score(resume_data, company_data):
         'experience': 0.15
     }
     
-    # Score skills match (35%)
-    skills_score = score_skills(resume_data.get('skills', []), 
-                               company_data.get('skillSet', []),
-                               company_data.get('coreSkills', []))
+    # Calculate individual component scores
+    skills_score = score_skills(
+        resume_data.get('Skill_Set', []), 
+        company_data.get('Skill_Set', []),
+        company_data.get('Core_Skills', [])
+    )
     
-    # Score education match (25%)
-    education_score = score_education(resume_data.get('education', []), 
-                                     company_data.get('cpi', 0),
-                                     company_data.get('branch', []))
+    education_score = score_education(
+        resume_data.get('CPI', 0), 
+        company_data.get('CPI', 0),
+        company_data.get('Branch', []),
+        resume_data.get('Branch', '')
+    )
     
-    # Score projects match (25%)
-    projects_score = score_projects(resume_data.get('projects', []), 
-                                   company_data.get('minProjects', 0),
-                                   company_data.get('projectKeywords', []))
+    projects_score = score_projects(
+        resume_data.get('Projects', 0), 
+        company_data.get('Min_Projects', 0),
+        company_data.get('Project_Keywords', []),
+        resume_data.get('Project_Keywords', [])
+    )
     
-    # Score experience (15%)
-    experience_score = score_experience(resume_data.get('experience', []))
+    experience_score = score_experience(resume_data.get('Experience', 0))
     
     # Calculate weighted total score
     total_score = (
@@ -42,6 +55,17 @@ def calculate_score(resume_data, company_data):
     return round(total_score, 2)
 
 def score_skills(resume_skills, company_skills, core_skills):
+    """
+    Calculate skills match score based on resume skills and company required skills.
+    
+    Args:
+        resume_skills: List of skills from the resume
+        company_skills: List of skills required by the company
+        core_skills: List of core skills required by the company
+        
+    Returns:
+        Float: Skills match score (0-100)
+    """
     if not resume_skills or not company_skills:
         return 0
     
@@ -55,78 +79,100 @@ def score_skills(resume_skills, company_skills, core_skills):
     core_skill_matches = sum(1 for skill in core_skills_lower if skill in resume_skills_lower)
     
     # Calculate score
-    skill_score = (skill_matches / len(company_skills_lower)) * 70
+    skill_score = (skill_matches / len(company_skills_lower)) * 70 if company_skills_lower else 0
     core_skill_score = 0
     if core_skills_lower:
         core_skill_score = (core_skill_matches / len(core_skills_lower)) * 30
     
     return skill_score + core_skill_score
 
-def score_education(education, min_cpi, required_branches):
-    if not education:
+def score_education(cpi, min_cpi, required_branches, resume_branch):
+    """
+    Calculate education match score based on CPI and branch.
+    
+    Args:
+        cpi: Student's CPI/GPA
+        min_cpi: Minimum CPI required by company
+        required_branches: List of branches accepted by company
+        resume_branch: Student's branch
+        
+    Returns:
+        Float: Education match score (0-100)
+    """
+    if not cpi:
         return 0
     
-    education_score = 0
-    
-    highest_gpa = 0
-    for edu in education:
-        if edu.get('gpa', 0) > highest_gpa:
-            highest_gpa = edu.get('gpa', 0)
-    
-    if highest_gpa >= min_cpi:
+    # CPI score (70%)
+    if cpi >= min_cpi:
         cpi_score = 70
     else:
-        cpi_ratio = highest_gpa / min_cpi if min_cpi > 0 else 0
+        cpi_ratio = cpi / min_cpi if min_cpi > 0 else 0
         cpi_score = cpi_ratio * 70
     
+    # Branch score (30%)
     branch_score = 0
     if required_branches:
-        for edu in education:
-            degree = edu.get('degree', '').lower()
-            for branch in required_branches:
-                if branch.lower() in degree:
-                    branch_score = 30
-                    break
+        resume_branch_lower = resume_branch.lower() if resume_branch else ""
+        for branch in required_branches:
+            if isinstance(branch, str) and (branch.lower() in resume_branch_lower or resume_branch_lower in branch.lower()):
+                branch_score = 30
+                break
     else:
         branch_score = 30
     
     return cpi_score + branch_score
 
-def score_projects(projects, min_projects, project_keywords):
-    if not projects:
+def score_projects(project_count, min_projects, company_keywords, resume_keywords):
+    """
+    Calculate project match score based on count and keyword matches.
+    
+    Args:
+        project_count: Number of projects in the resume
+        min_projects: Minimum number of projects required by company
+        company_keywords: List of keywords the company is looking for
+        resume_keywords: List of keywords from resume projects
+        
+    Returns:
+        Float: Project match score (0-100)
+    """
+    if project_count == 0:
         return 0
     
-    project_count_score = 0
-    if len(projects) >= min_projects:
+    # Project count score (50%)
+    if project_count >= min_projects:
         project_count_score = 50
     else:
-        project_ratio = len(projects) / min_projects if min_projects > 0 else 0
+        project_ratio = project_count / min_projects if min_projects > 0 else 0
         project_count_score = project_ratio * 50
     
+    # Project keywords score (50%)
     keyword_score = 0
-    if project_keywords:
-        keyword_matches = 0
-        for project in projects:
-            project_desc = project.get('description', '').lower()
-            for keyword in project_keywords:
-                if keyword.lower() in project_desc:
-                    keyword_matches += 1
+    if company_keywords:
+        company_keywords_lower = [kw.lower() for kw in company_keywords]
+        resume_keywords_lower = [kw.lower() for kw in resume_keywords]
         
-        keyword_score = min(50, (keyword_matches / len(project_keywords)) * 50)
+        keyword_matches = sum(1 for kw in company_keywords_lower if any(kw in rk for rk in resume_keywords_lower))
+        keyword_score = min(50, (keyword_matches / len(company_keywords)) * 50) if len(company_keywords) > 0 else 50
     else:
         keyword_score = 50
     
     return project_count_score + keyword_score
 
-def score_experience(experience):
-    if not experience:
-        return 0
+def score_experience(experience_count):
+    """
+    Calculate experience score based on number of experiences.
     
-    if len(experience) >= 3:
+    Args:
+        experience_count: Number of work experiences
+        
+    Returns:
+        Float: Experience score (0-100)
+    """
+    if experience_count >= 3:
         return 100
-    elif len(experience) == 2:
+    elif experience_count == 2:
         return 80
-    elif len(experience) == 1:
+    elif experience_count == 1:
         return 60
     else:
         return 0
@@ -142,6 +188,9 @@ if __name__ == "__main__":
         
         score = calculate_score(resume_data, company_data)
         print(json.dumps({"score": score}))
+    except json.JSONDecodeError as e:
+        print(json.dumps({"error": f"Invalid JSON: {str(e)}"}))
+        sys.exit(1)
     except Exception as e:
         print(json.dumps({"error": str(e)}))
         sys.exit(1)

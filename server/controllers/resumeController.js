@@ -2,7 +2,8 @@ import Resume from '../models/Resume.js';
 import Company from '../models/Company.js';
 import { parseResumeFile } from '../services/resumeParser.js';
 import { generateRankings } from '../services/rankGenerator.js';
-import { existsSync, unlinkSync } from 'fs';
+import fs,{ existsSync, unlinkSync } from 'fs';
+
 
 
 export async function uploadResume(req, res) {
@@ -15,6 +16,8 @@ export async function uploadResume(req, res) {
     
     // Parse the resume
     const parsedResume = await parseResumeFile(filePath);
+
+    // console.log(parsedResume)
     
     // Get all companies from the database
     const companies = await Company.find();

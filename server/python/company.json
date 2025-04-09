@@ -1,0 +1,10 @@
+{
+    "Company_Name": "IBM India",
+    "CPI": 7,
+    "Skill_Set": ["Python", "DevOps", "Kubernetes", "Docker"],
+    "Min_Projects": 2,
+    "Project_Keywords": ["Python", "DevOps", "Kubernetes", "Docker"],
+    "Branch": ["CSE", "IT", "ECE"],
+    "Core_Skills": ["OS", "Networks", "DBMS"]
+  }
+  

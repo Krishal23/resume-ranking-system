@@ -1,6 +1,17 @@
 import mongoose from 'mongoose';
 import { Schema, model } from 'mongoose';
 
+
+const skillsSchema = new mongoose.Schema({
+  programming_languages: [String],
+  frameworks: [String],
+  tools: [String],
+  core_courses: [String],
+  mathematics: [String],
+  libraries: [String],
+  soft_skills: [String]
+}, { _id: false });
+
 const ResumeSchema = new Schema({
   name: {
     type: String,
@@ -9,7 +20,7 @@ const ResumeSchema = new Schema({
   email: {
     type: String,
     required: true,
-    unique: true
+    // unique: true
   },
   phone: {
     type: String
@@ -20,7 +31,7 @@ const ResumeSchema = new Schema({
     year: String,
     gpa: Number
   }],
-  skills: [String],
+  skills: [skillsSchema],
   experience: [{
     company: String,
     position: String,

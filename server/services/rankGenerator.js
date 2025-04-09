@@ -1,7 +1,9 @@
 import { runPythonScript } from '../utils/pythonRunner.js';
+import Resume from '../models/Resume.js';
+
+
 
 export const generateRankingScore = async (resumeData, companyData) => {
-  // console.log(resumeData)
   try {
     const transformedCompanyData = {
       Company_Name: companyData.name,
@@ -12,28 +14,57 @@ export const generateRankingScore = async (resumeData, companyData) => {
       Branch: companyData.branch,
       Core_Skills: companyData.coreSkills
     };
-    
+
+    // console.log(resumeData)
+  
     const transformedResumeData = {
       CPI: resumeData.education && resumeData.education.length > 0 ? 
-           Math.max(...resumeData.education.map(edu => edu.gpa || 0)) : 0,
-      Skill_Set: new Set(resumeData.skills || []),
+           resumeData.education[0].cpi || 0 : 0,
+      Skill_Set: new Set([
+        ...(resumeData.skills?.programming_languages || []),
+        ...(resumeData.skills?.frameworks || []),
+        ...(resumeData.skills?.tools || []),
+        ...(resumeData.skills?.libraries || [])
+      ]),
       Projects: resumeData.projects ? resumeData.projects.length : 0,
       Project_Keywords: new Set(resumeData.projects ? 
-                            resumeData.projects.flatMap(p => p.technologies || []) : []),
+        resumeData.projects.flatMap(p => p.technologies || []) : []),
       Mobile: resumeData.phone || "",
-      Email: resumeData.email || "",
-      Experience: resumeData.experience ? resumeData.experience.length : 0,
-      Core_Skills: new Set(resumeData.skills || []),
-      Branch: resumeData.education && resumeData.education.length > 0 ? 
-              resumeData.education[0].degree : ""
+      Email: resumeData.email ? resumeData.email.split("GitHub")[0] : "",
+      Experience: 0, // No experience data in the parsed resume
+      Core_Skills: new Set([
+        ...(resumeData.skills?.programming_languages || []),
+        ...(resumeData.skills?.frameworks || []),
+        ...(resumeData.skills?.tools || [])
+      ]),
+      Branch: (resumeData.education?.[0]?.degree)?.includes(' in ') 
+              ? resumeData.education[0].degree.split(' in ')[1] 
+              : resumeData.education?.[0]?.degree || ''
+
     };
 
-    // console.log("Resume DAta=>>>>",transformedResumeData)
-    // console.log("Company Data=>>>",transformedCompanyData)
-    
-    const resumeJson = JSON.stringify(transformedResumeData);
-    const companyJson = JSON.stringify(transformedCompanyData);
-    
+    //preparing json
+    const prepareForJSON = (obj) => {
+      const result = {};
+
+      for (const [key, value] of Object.entries(obj)) {
+        if (value instanceof Set) {
+          result[key] = Array.from(value);
+        } else {
+          result[key] = value;
+        }
+      }
+
+      return result;
+    };
+
+    const jsonReadyResumeData = prepareForJSON(transformedResumeData);
+    const jsonReadyCompanyData = prepareForJSON(transformedCompanyData);
+
+    // stringify
+    const resumeJson = JSON.stringify(jsonReadyResumeData);
+    const companyJson = JSON.stringify(jsonReadyCompanyData);
+
     const result = await runPythonScript('rank_generator.py', [resumeJson, companyJson]);
     
     if (result.error) {
@@ -48,33 +79,77 @@ export const generateRankingScore = async (resumeData, companyData) => {
 };
 
 
+
 export const generateRankings = async (resumeData, companies) => {
   try {
-    const rankings = [];
-    
+    const newResumeScores = [];
+
     for (const company of companies) {
-      const score = await generateRankingScore(resumeData, company);
-      
-      rankings.push({
-        company: company._id,
+      const newScore = await generateRankingScore(resumeData, company);
+
+      newResumeScores.push({
+        companyId: company._id.toString(),
         companyName: company.name,
-        score
+        score: newScore
       });
     }
-    
-    // Sort rankings by score 
-    rankings.sort((a, b) => b.score - a.score);
-    
-    // Add rank property
-    rankings.forEach((ranking, index) => {
-      ranking.rank = index + 1;
-    });
-    
+
+    const rankings = [];
+
+    for (const { companyId, companyName, score } of newResumeScores) {
+      // Get all resumes that have ranking for this company
+      const resumes = await Resume.find({ 'rankings.company': companyId });
+
+      // Add the new resume (not saved yet)
+      const allRankings = resumes.map(r => {
+        const ranking = r.rankings.find(rank => rank.company.toString() === companyId);
+        return {
+          resume: r,
+          score: ranking?.score || 0
+        };
+      });
+
+      // Include the current resume being uploaded
+      allRankings.push({
+        resume: null, // null means this is the new resume
+        score
+      });
+
+      // Sort by score descending
+      allRankings.sort((a, b) => b.score - a.score);
+
+      // Assign ranks
+      for (let i = 0; i < allRankings.length; i++) {
+        allRankings[i].rank = i + 1;
+      }
+
+      // Update rankings of existing resumes in DB
+      for (const item of allRankings) {
+        if (item.resume) {
+          const updatedRankings = item.resume.rankings.map(r =>
+            r.company.toString() === companyId
+              ? { ...r.toObject(), score: item.score, rank: item.rank }
+              : r
+          );
+
+          item.resume.rankings = updatedRankings;
+          await item.resume.save();
+        } else {
+          // This is the new resume
+          rankings.push({
+            company: companyId,
+            companyName,
+            score,
+            rank: item.rank
+          });
+        }
+      }
+    }
+
     return rankings;
   } catch (error) {
-    console.error('Error generating rankings:', error);
+    console.error('❌ Error generating rankings:', error);
     throw new Error(`Failed to generate rankings: ${error.message}`);
   }
 };
-
 

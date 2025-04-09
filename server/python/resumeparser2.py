@@ -1,6 +1,5 @@
 import re
 import json
-import sys
 import nltk
 from nltk.tokenize import word_tokenize
 from nltk.corpus import stopwords
@@ -306,15 +305,57 @@ def extract_achievements(achievements_text):
     
     return achievements
 
-
 if __name__ == "__main__":
-    # Get resume text 
-    if len(sys.argv) < 2:
-        print(json.dumps({"error": "No resume text provided"}))
-        sys.exit(1)
+    # For testing with the provided resume text
+    resume_text = """Kushal Kesharwani
+Email: kushal_2301mc57@iitp.ac.inGitHub:github.com/Krishal23
+Phone: +91-6306243407LinkedIn:linkedin.com/in/kushal-kesharwani-49000525b/
+Education
+•
+Indian Institute of Technology (IIT) PatnaPatna, Bihar
+B.Tech in Mathematics and Computing, Minor in Computer Science and EngineeringAugust 2023 – Present   
+–CPI:8.06
+•
+St. Thomas School, Handia, PrayagrajPrayagraj, Uttar Pradesh
+12th (2022): 94.4%, 10th (2020): 95%2022
+SKILLS / RELEVANT COURSEWORK
+•Programming Languages:C++,Python, JavaScript.
+•Frameworks:React, Node.js, MongoDB, Express.js, Next.js.
+•Tools:Git, Postman, MongoDB Compass, Tailwind CSS.
+•Core Courses:Algorithms, Discrete Mathematics, Machine Learning, Data Science, Real Analysis, Database
+Management Systems.
+•Mathematics:Probability and Random Processes, Linear Algebra, Complex analysis.
+•Libraries: scikit-learn, Keras, Pandas, NumPy.
+•Soft Skills: Leadership, Event Management, Writing, Public Speaking.
+Projects
+•
+LINK IITP – Course-Notes-Portallink.iitp.ac.in
+IIT Patna2024
+–Engineereda RESTful API using Express.js and MongoDB, reducing database query times by 40% .
+– Developedsecure admin authorization protocols to efficiently manage course materials.
+– IntegratedCloudinary for optimized storage, ensuring rapid access to digital resources.
+– Collaboratedin both frontend and backend development, achieving a seamless user experience.
+•
+Official Website for Infinito 2024infinito.iitp.ac.in
+IIT Patna2024
+–Constructeda responsive and scalable website for IIT Patna's annual sports fest, attracting over5000visitors.
+– Integratedreal-time event updates that improved user accessibility by35%.
+– Optimizedwebsite performance by reducing load times by40%using React and Vanilla CSS.
+•
+EduGRANTORS – LMS Platformedugrantors.in
+EDU GRANTORS2024
+–Engineereda comprehensive Learning Management System using Next.js, MongoDB, Express, and Tailwind   
+CSS, streamlining digital learning.
+– Designedand implemented a robust role-based authentication system across three user levels: Student, Teacher,
+and Admin.
+– Integratedadvanced features for study material sharing, video lectures, and real-time notifications to enhance
+user engagement.
+– Optimizedsystem performance and fortified security to efficiently manage multiple users.
+Responsibilities & Achievements
+•JEE Advanced 2023:Secured an All India Rank of 6584 out of more than 1.7 million candidates.
+•Inter-IIT Cult Meet 7.0:Part of the core organizing committee, ensuring smooth execution for 3500+ participants.
+•Responsibilities:Led digital, technical, and financial operations as Sub-coordinator for MPR Committee, Web Dev
+Committee, Finance Club, and NJACK Dev and OS at IIT Patna (2024)."""
     
-    resume_text = sys.argv[1]
     result = parse_resume(resume_text)
-    # print(result)
-
-    print(json.dumps(result))
+    print(json.dumps(result, indent=2))
