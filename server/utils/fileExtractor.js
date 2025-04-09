@@ -20,6 +20,7 @@ export const extractTextFromFile = async (filePath) => {
   
   switch (extension) {
     case '.pdf':
+      
       return await extractTextFromPDF(filePath);
     case '.txt':
       return readFileSync(filePath, 'utf8');

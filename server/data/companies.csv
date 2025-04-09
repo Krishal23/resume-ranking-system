@@ -1,0 +1,139 @@
+Company Name,Minimum CPI/GPA,Required Skills,Internship Role,Visits IIT Patna ,No of Projects,Key words in project,Branches Invited,DSA REQUIRED,CORE COMPUTER SKILLS
+Credit Suisse,7.0+,"Artificial Intelligence, Automation",Automation Intern,NO,2+,"AI, ML, RPA, Python, Automation","CSE, ECE, IT",NO,"OS, Networks"
+KPMG,7.0+,"Audit, Consulting",Audit Intern,NO,1+,"Audit, Financial Analysis, Risk Assessment",Any Branch,NO,None
+Mahindra & Mahindra,7.0+,Automobile Engineering,Automobile Engineer Intern,NO,2+,"CAD, SolidWorks, Vehicle Dynamics","Mechanical, Automobile",NO,None
+Amazon,7.0+,"Amazon Web Services, Java, Python",Software Development Intern,YES,2+,"DSA, Java, AWS, System Design","CSE, ECE, IT",YES,"OOP, OS, DBMS, Networks"
+American Express,7.0+,"Banking, Artificial Intelligence",Information Technology Intern,NO,2+,"AI, ML, Data Analysis","CSE, ECE, IT",NO,"DBMS, OS"
+Deutsche Bank,7.0+,"Banking, Data Science",Finance Intern,NO,2+,"Finance, Python, SQL, Risk Analysis","CSE, IT, ECE, Maths & Computing",NO,DBMS
+Standard Chartered,7.0+,"Banking, Information Technology",Banking Intern,NO,1+,"Tech, SQL, Data Security","CSE, IT, ECE",NO,"Networks, DBMS"
+Shell India,7.0+,Chemical Engineering,Petroleum Engineering Intern,NO,2+,"Chemical Simulation, MATLAB, Oil & Gas","Chemical, Petroleum",NO,None
+Larsen & Toubro,7.0+,"Civil, Mechanical",Civil Engineer Intern,NO,2+,"Structural Design, AutoCAD, Construction","Civil, Mechanical",NO,None
+Microsoft,7.0+,"Cloud Computing, .NET, JavaScript",Cloud Computing Intern,NO,2+,"Azure, .NET, JavaScript, Kubernetes","CSE, IT, ECE",YES,"OS, DBMS, OOP, Networks"
+IBM India,7.0+,"Cloud Computing, Python, Development Operations",Software Engineer,NO,2+,"Python, DevOps, Kubernetes, Docker","CSE, IT, ECE",YES,"OS, Networks, DBMS"
+Cognizant,7.0+,"Cloud Computing, Web Development",Cloud Engineer Intern,NO,2+,"Cloud, Web Dev, AWS, React","CSE, IT",NO,"DBMS, OS"
+Ernst & Young (EY),7.0+,"Consulting, Data Analysis",Consulting Intern,NO,1+,"Business Analysis, Excel, Power BI",Any Branch,NO,None
+Cisco Systems,7.0+,"Cybersecurity, Networking",Cybersecurity Intern,NO,2+,"Networking, Cybersecurity, Firewalls","CSE, IT, ECE",NO,"Networks, OS"
+ZL Technologies,6.5,"Data Analysis, R Programming, Structured Query Language",Member of Technical Staff,YES,2+,"R, SQL, Data Analysis, Big Data","CSE, IT, ECE, Maths & Computing",NO,DBMS
+Sprinklr,7.5+,"Data Structures, Algorithms, Python, Java",Product Engineering Intern,YES,2+,"DSA, Java, OOP, Software Development","CSE, IT, ECE",YES,"OOP, OS, DBMS"
+Google,Not Available,"Data Structures, Algorithms, Python, Java, C++",Software Engineer Intern,YES,2+,"DSA, C++, Competitive Programming","CSE, IT, ECE",YES,"OS, OOP, DBMS, Networks"
+Oracle,7.0+,"Database Management, Java",Database Intern,NO,2+,"SQL, DBMS, Java, OracleDB","CSE, IT",YES,"DBMS, OS"
+Samsung R&D India,7.0+,"Embedded Systems, Artificial Intelligence",Embedded Systems Intern,YES,2+,"Embedded C, AI, Hardware, IoT","CSE, IT, ECE, EE",NO,"Computer Architecture, OS"
+Intel,7.0+,"Embedded Systems, C, C++",Hardware Engineer Intern,NO,2+,"Embedded C, FPGA, Microcontrollers, VLSI","ECE, EE, CSE",YES,"Computer Architecture, OS"
+HPCL,7.0+,"Energy, Internet of Things",Oil & Gas Intern,NO,2+,"IoT, Renewable Energy, SCADA, MATLAB","Electrical, Mechanical, Chemical",NO,None
+Samsung R&D Institute Delhi,7,"Microsoft Excel, Tableau, Structured Query Language",Software Development Engineer,YES,2+,"SQL, Data Visualization, Tableau, Python","CSE, IT, ECE",NO,DBMS
+Morgan Stanley,7.0+,"Finance, Artificial Intelligence",Finance Intern,NO,2+,"AI, Finance, Risk Modeling, Python, SQL","CSE, IT, Maths & Computing, ECE",NO,DBMS
+Citibank,7.0+,"Finance, Cloud Computing",Finance Intern,NO,2+,"Cloud, FinTech, SQL, Risk Analysis","CSE, IT, ECE, Maths & Computing",NO,"DBMS, Networks"
+Deloitte,7.0+,"Finance, Consulting",Finance Intern,NO,2+,"Financial Consulting, Business Strategy, Excel",Any Branch,NO,None
+Goldman Sachs,8.5+,"Finance, Machine Learning",Finance Intern,YES,2+,"ML,Finance, Quantitative Analysis, Python","CSE, IT, Maths & Computing, ECE",YES,"OS, DBMS, OOP"
+HSBC,7.0+,"Finance, Risk Analysis",Risk Management Intern,NO,2+,"Risk Assessment, Financial Modeling, SQL","CSE, IT, Maths & Computing, ECE",NO,DBMS
+BNP Paribas,7.0+,"Finance, Risk Management",Risk Analysis Intern,NO,2+,"Credit Risk, SQL, Data Analysis, Python","CSE, IT, Maths & Computing, ECE",NO,DBMS
+PwC,7.0+,"Finance, Risk Management",Finance Analyst Intern,NO,2+,"Finance, Risk Consulting, Business Analysis",Any Branch,NO,None
+J.P. Morgan,7.0+,"Finance, Trading",Risk Analyst Intern,NO,2+,"Risk Modeling, Investment Banking, Data Analysis","CSE, IT, Maths & Computing, ECE",NO,DBMS
+ONGC,7.0+,Gas Pipeline Engineering,Power Systems Intern,NO,2+,"Power Systems, Electrical Engineering, MATLAB","Electrical, Mechanical, Chemical",NO,None
+221B Baker Street,7.0+,"Salesforce (Apex, Salesforce Lightning, Salesforce Visualforce)",Salesforce Developer,YES,2+,"Salesforce, CRM, Apex Programming","CSE, IT, ECE",NO,"DBMS, Networks"
+Accenture India,6.5+,"Full-stack Development, Cloud Computing, Agile Methodologies, Java/Python",Advance Application Engineering Analyst,YES,2+,"Full Stack, Cloud, Java/Python","CSE, IT",YES,"OS, DBMS, Networks, OOP"
+Accenture Japan (Digital Consultant),Not Available,"Digital Transformation, Information Technology Consulting, Data Analytics",Digital Consultant,YES,2+,"Digital Strategy, Analytics, IT Consulting","CSE, IT, ECE",NO,"OS, DBMS, Networks"
+Accenture Japan (Business Consultant),Not Available,"Business Analysis, Strategic Planning, Process Improvement",Business Consultant,YES,2+,"Business Strategy, Process Optimization",Any Branch,NO,None
+Acxiom Consulting Pvt. Ltd.,Not Available,"Technical Consulting, Information Technology Systems, Troubleshooting",Trainee Technical Consultant,YES,2+,"IT Systems, Technical Support, ERP","CSE, IT, ECE",NO,"OS, Networks, DBMS"
+Algo EnergyTech Ventures Pvt. Ltd.,6.0+,"Energy Technology, System Integration, Problem-Solving",FTE Role,YES,2+,"EnergyTech, System Design, IoT","Electrical, Mechanical, Energy Systems",NO,None
+Axxela,5.0+,"Data Analysis, Microsoft Excel, Research",Trainee Analyst,YES,1+,"Data Analysis, Research, Excel, Visualization",Any Branch,NO,None
+BeeHyv,6.5+,"Programming (Java, Python), Debugging, Git",Developer Trainee,YES,2+,"Java, Python, Debugging, Git, Software Dev","CSE, IT",YES,"OOP, OS, DBMS"
+BlackNGreen,Not Available,"Innovation Management, Design Thinking, Prototyping",Innovation Engineer,YES,2+,"Prototyping, Design Thinking, UX Research","CSE, IT, Design, Mechanical",NO,None
+BPCL,6.5+,"Engineering Fundamentals, Process Engineering, Project Management",Engineer,YES,2+,"Process Engineering, Industrial Safety, MATLAB","Chemical, Mechanical, Electrical",NO,None
+C-DOT,7.0+,"Research, Technical Analysis, Communication Technology",Research Engineer,YES,2+,"Technical Research, Wireless Networks, AI ,Telecom","CSE, IT, ECE, EE",NO,"Networks, OS"
+Chaitanyas Academy,6.0+,"Subject Expertise, Curriculum Design, Teaching",Faculty,YES,1+,"Curriculum Design, Teaching",Any Branch,NO,None
+Cubastion,6.5+,"Engineering Principles, Analytical Skills",Graduate Trainee Engineer,YES,2+,"Problem-Solving, Data Analysis","Mechanical, Electrical, Civil",NO,None
+Dover India Pvt. Ltd.,6.5+,"Engineering Fundamentals, Computer-Aided Design, Teamwork",Graduate Engineer Trainee,YES,2+,"CAD, Mechanical Design, SolidWorks, AutoCAD","Mechanical, Civil",NO,None
+E-Ring,6.0+,"Programming (Java, C++, Python), Algorithms",Software Developer Engineer,YES,2+,"Java, C++, Python, Data Structures, OOP","CSE, IT",YES,"OOP, OS, DBMS"
+Escort Kubota,Not Available,"Engineering Basics, Design, Problem-Solving",Graduate Engineer Trainee,YES,2+,"Engineering Design, Product Development","Mechanical, Civil",NO,None
+ETMediaLabs,Not Available,"Client Management, Communication, Coordination",Associate-Client Success,YES,1+,"Client Communication, CRM, Market Analysis",Any Branch,NO,None
+Fuji Electric,Not Available,"Electrical Engineering and Mechanical Engineering, Product Development",Engineer,YES,2+,"Power Systems, Electrical Design, Control Systems","Electrical, Mechanical",NO,None
+Futures First,Not Available,"Market Research, Data Analytics, Microsoft Excel",Trainee-Market Analyst,YES,2+,"Financial Modeling, Market Research, Excel","CSE, IT, Maths & Computing",NO,None
+HDFC Bank,Not Available,"Credit Risk, Financial Modeling, Data Analytics",Credit Analytics and Innovation,YES,2+,"Credit Risk, SQL, Data Analytics","CSE, IT, Maths & Computing",NO,DBMS
+Hexaware Technologies,6.0+,"Advanced Programming, Digital Solutions, Agile Methodologies",Exponential Maverick,YES,2+,"Agile Development, Full-Stack, Cloud Computing","CSE, IT",YES,"OS, DBMS, Networks, OOP"
+HPCL,Not Available,"Engineering Fundamentals, Project Management, Safety",Officer - Engineering,YES,2+,"Process Safety, Industrial Engineering","Chemical, Mechanical, Electrical",NO,None
+Husk Power Systems,7.0+,"Electronics Design, Circuit Analysis, Embedded Systems",Electronics Engineer,YES,2+,"PCB Design, Embedded C, IoT","ECE, EE",NO,"Computer Architecture, OS"
+Infosys,Not Available,"Programming (Java, C++, Python), Algorithms, Debugging",Specialist Programmer,YES,2+,"DSA, Java, Python, Debugging, SDLC","CSE, IT",YES,"OOP, OS, DBMS"
+Intellipaat,Not Available,"Business Development, Market Research, Sales",Business Development Associate,YES,2+,"Sales Strategies, Market Research",Any Branch,NO,None
+Jindal Shaheed Iron & Steel,7.0+,"Engineering, Metallurgy, Technical Problem Solving",Graduate Engineer Trainee,YES,2+,"Metallurgical Analysis, Material Science","Metallurgical, Mechanical, Chemical",NO,None
+JSW,6.0+,"Engineering Fundamentals, Design, Problem-Solving",Graduate Engineer Trainee,YES,2+,Material Testing,"Mechanical, Civil",NO,None
+L&T,Not Available,"Engineering Skills, Technical Design, Project Management",Graduate Engineer Trainee,YES,2+,"Civil Engineering, Construction Management","Civil, Mechanical",NO,None
+Mahindra & Mahindra,6.0+,"Engineering Fundamentals, Technical Proficiency, Teamwork",Graduate Engineer Trainee,YES,2+,"Automotive Engineering, Product Design","Mechanical, Automobile, Electrical",NO,None
+Mareana Inc. Jaguar Land Rover / EXL Service,7.0+,"Software Development, Java, C++, Python, Automotive Technology","Associate Software Engineer, Graduate Software Engineer, Consultant-I",YES,2+,"Java, C++, Python, Automotive Software","CSE, IT, ECE",YES,"OS, DBMS, OOP, Networks"
+Merilytics,6.5+,"Business Analysis, Data Analytics, Strategic Planning",Senior Business Associate,YES,2+,"Business Intelligence, SQL, Data Analysis","CSE, IT, Maths & Computing",NO,DBMS
+Nation with Namo,7.0+,"Business Operations, Communication, Analytics",Associate,YES,2+,"Political Analytics, Business Operations",Any Branch,NO,None
+Niterra (IT Security Engineer),Not Available,"Cybersecurity, Threat Analysis, Risk Management",IT Security Engineer,YES,2+,"Network Security, Ethical Hacking, SIEM","CSE, IT",NO,"Networks, OS, Security"
+Niterra (Infrastructure Engineer),Not Available,"Information Technology Infrastructure, System Administration, Cloud Computing",Infrastructure Engineer,YES,2+,"Cloud Computing, System Administration","CSE, IT",YES,"Networks, OS"
+Nvidia,7.0+,"System Programming, C/C++, Operating System, Graphics Processing Unit",System Software Engineer,YES,2+,"C++, CUDA, GPU Computing, OS","CSE, IT, ECE",YES,"OS, Computer Architecture"
+Outwrk,6.5+,"Digital Marketing, Search Engine Optimization/Search Engine Marketing, Analytics",Performance Marketing Specialist,YES,2+,"SEO, SEM, Google Ads, Marketing Analytics",Any Branch,NO,None
+OYO Rooms,Not Available,"Revenue Management, Financial Analysis, Market Research",Revenue Lead,YES,2+,"Revenue Optimization, Financial Modeling",Any Branch,NO,None
+Physics Wallah,Not Available,"Subject Expertise, Teaching, Curriculum",Trainee Faculty,YES,1+,"Teaching Skills, Curriculum Development",Any Branch,NO,None
+PI Industries,6.0+,"Engineering, Process Engineering, Problem-Solving",Graduate Engineer Trainee,YES,2+,"Process Engineering, Problem-Solving","Chemical, Mechanical",NO,None
+Pratik Tutorials,Not Available,"Subject Expertise, Teaching, Curriculum Design",Faculty,YES,1+,"Teaching, Subject Expertise",Any Branch,NO,None
+Publicis Sapient,7.5+,"Software Development, Java, C++, Python, Algorithms",ASDE 1,YES,2+,"Java, C++, Python, System Design","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Qbit Labs,7.0+,"Research and Development, Engineering, Innovation",Research and Development Engineer Trainee,YES,2+,"R&D, Innovation, Engineering Design","CSE, IT, Mechanical, Electrical",NO,None
+Quicksell,Not Available,"Android Development, Java, Kotlin, User Interface/User Experience",Android Engineer,YES,2+,"Android, Kotlin, Java, UI/UX","CSE, IT",YES,"OOP, OS, DBMS"
+Raapid.AI,7.0+,"Engineering, Software/Hardware Integration, Artificial Intelligence/Machine Learning",Engineer,YES,2+,"AI/ML, Software-Hardware Integration","CSE, IT, ECE",YES,"OS, DBMS, Computer Architecture"
+RMoney (Financial Analyst),Not Available,"Financial Modeling, Data Analytics, Microsoft Excel",Financial Analyst,YES,2+,"Financial Modeling, Excel, SQL",Any Branch,NO,DBMS
+RMoney (C++ Developer),Not Available,"C++ Programming, Object-Oriented Programming, Algorithms",C++ Developer,YES,2+,"C++, OOP, Data Structures","CSE, IT",YES,"OS, DBMS, OOP"
+Shadowfax,6.0+,"Business Analysis, Data Analytics, Process Optimization",Business Analyst,YES,2+,"Process Optimization, Data Analysis",Any Branch,NO,None
+Shorthills.Ai,6.5+,"Software Development, Java, Python, C++, Algorithms",Software Development Engineer,YES,2+,"Java, Python, C++, Algorithms","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Sonalika Group,7.0+,"Engineering Fundamentals, Technical Skills, Problem-Solving",Graduate Engineer Trainee,YES,2+,"Engineering Design, Product Development","Mechanical, Automobile",NO,None
+Suntory Holdings,Not Available,"Information Technology Strategy, Digital Transformation, Enterprise Architecture",Global IT Strategy,YES,2+,"IT,Strategy, Digital Transformation","CSE, IT",NO,"OS, DBMS, Networks"
+Switch Mobility,6.0+,"Engineering, Product Design, Project Management",Engineering Graduate,YES,2+,"Product Design, Engineering Project","Mechanical, Automobile",NO,None
+Tata Power,6.0+,"Engineering, Power Systems, Problem-Solving",Graduate Engineer Trainee,YES,2+,"Power Systems, Electrical","Electrical, Mechanical",NO,None
+TCS INE,7.0+,"Software Development, Java, C++, Python, Algorithms",Software Development Engineer,YES,2+,"Java, C++, Python, Data Structures","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Technip Energies,Not Available,"Engineering Fundamentals, Energy Sector, Project Management",Graduate Engineer Trainee,YES,2+,"Energy Engineering, Project Planning","Mechanical, Chemical, Electrical",NO,None
+Tesco,8.0+,"Software Development, Programming, System Design",Software Engineer,YES,2+,"System Design, Java, Python","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Tredence Analytics,6.5+,"Data Analysis, Structured Query Language, Python or R, Visualization",Data Analyst,YES,2+,"SQL, Data Analysis, Python, R","CSE, IT, Maths & Computing",NO,DBMS
+TVS Motors,6.0+,"Territory Management, Customer Service, Communication",Territory Manager - Service,YES,1+,"Customer Service, Territory Management",Any Branch,NO,None
+Willings Inc. (Mynavi),Not Available,"Web Development, HTML, Cascading Style Sheets, JavaScript, Responsive Design",Web App Developer,YES,2+,"HTML, CSS, JavaScript, Responsive Design","CSE, IT",YES,"OS, DBMS, Networks"
+Willings Inc. (Otsuka),Not Available,"Software Development, Java, C++, Python, Agile Methodologies",Software Development Engineer,YES,2+,"Java, C++, Python, Agile","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Quicksell,Not Available,"HTML, Cascading Style Sheets, JavaScript, React",Frontend Engineer,YES,2+,"HTML, CSS, JavaScript, React","CSE, IT",YES,"OS, DBMS, Networks"
+Siemens,7.0+,Industrial Automation,Automation Engineer Intern,NO,2+,"Industrial,Automation, Robotics","Electrical, Mechanical, ECE",NO,None
+Bosch India,7.0+,"Internet of Things, Artificial Intelligence",Internet of Things Engineer Intern,NO,2+,"IoT, AI, Embedded Systems","CSE, IT, ECE, Electrical",YES,"OS, DBMS, OOP"
+Tech Mahindra,7.0+,"Information Technology Services, Artificial Intelligence",Software Engineer Intern,NO,2+,"AI, IT Services, Software Engineering","CSE, IT",NO,"OS, Networks, Security"
+Dell Technologies,7.0+,"Information Technology Solutions, Cybersecurity",Cybersecurity Intern,NO,2+,"Cybersecurity, IT Solutions","CSE, IT",YES,"OS, DBMS, OOP"
+Wipro,7.0+,"Java, Artificial Intelligence/Machine Learning",Software Engineer,NO,2+,"Java, AI/ML, Algorithms","CSE, IT",YES,DBMS
+Flipkart,7.0+,"Java, Data Analytics",Data Analyst,NO,2+,"Java, Data Analytics, SQL","CSE, IT, Maths & Computing",YES,"OS, DBMS, OOP, Networks"
+Faxoc,7,"Java, Spring Boot, Representational State Transfer Application Programming Interfaces",Software Development Engineer,YES,2+,"Java, Spring Boot, REST APIs","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+MathWorks,Not Available,"Java, Spring Boot, Representational State Transfer Application Programming Interfaces",Software Development Engineer,YES,2+,"Java, Spring Boot, REST APIs","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Media.Net,6,"Java, Spring Boot, Representational State Transfer Application Programming Interfaces",Software Development Engineer,YES,2+,"Java, Spring Boot, REST APIs","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Samsung Noida,7.5,"Java, Spring Boot, Representational State Transfer Application Programming Interfaces","Engineer, Research and Development",YES,2+,"Java, R&D, Software Development","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Talenserv,Not Available,"Java, Spring Boot, Representational State Transfer Application Programming Interfaces",Software Development Engineer,YES,2+,"Java, Spring Boot, REST APIs","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Tiger Analytics,6.5,"Java, Spring Boot, Representational State Transfer Application Programming Interfaces",Trainee Analyst,YES,2+,"Java, Spring Boot, Data Analysis","CSE, IT, Maths & Computing",YES,DBMS
+Tummee,7,"Java, Spring Boot, Representational State Transfer Application Programming Interfaces",Software Development Engineer,YES,2+,"Java, Spring Boot, REST APIs","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Willings Inc. (Arsaga Partners inc.),Not Available,"Java, Spring Boot, Representational State Transfer Application Programming Interfaces",Software Development Engineer,YES,2+,"Java, Spring Boot, REST APIs","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Zangoh,7,"Java, Spring Boot, Representational State Transfer Application Programming Interfaces",Generative Artificial Intelligence Engineer,YES,2+,"Java, Spring Boot, AI","CSE, IT, Maths & Computing",YES,"OS, DBMS, OOP, Networks"
+TCS,7.0+,"Java, Structured Query Language, System Design",Software Engineer,YES,2+,"Java, SQL, System Design","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Infosys,7.0+,"Java, Web Development, Testing",Software Engineer,YES,2+,"Java, Web Development, Testing","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Hindustan Unilever,7.0+,"Marketing, Product Design",Marketing Intern,NO,2+,"Marketing, Product Design",Any Branch,YES,"OS, DBMS, OOP"
+Reliance Industries,7.0+,"Mechanical, Civil, Information Technology",Engineering Intern,NO,2+,"Engineering, IT Solutions","Mechanical, Civil, IT",NO,None
+Capgemini,7.0+,"Networking, Cloud Computing",Information Technology Intern,NO,2+,"Networking, Cloud Computing","CSE, IT",NO,"Networks, OS"
+Quicksell,Not Available,"Node.js, Django, Structured Query Language",Backend Engineer,YES,2+,"Node.js, Django, SQL","CSE, IT",YES,"OS, DBMS, Networks"
+BPCL,7.0+,Oil and Gas,Chemical Engineering Intern,NO,2+,"Chemical Engineering, Oil and Gas",Chemical,NO,None
+UBS,7.0+,Petroleum Engineering,Energy Intern,NO,2+,"Petroleum Engineering, Energy",Petroleum,NO,None
+GAIL,7.0+,"Power Systems, Electrical Engineering",Electrical Engineer Intern,NO,2+,"Power Systems, Electrical Engineering",Electrical,NO,None
+Indian Oil Corporation,7.0+,"Power Systems, Electrical Engineering",Gas Engineer Intern,NO,2+,"Electrical Engineering, Power Systems",Electrical,NO,None
+NTPC,7.0+,"Power Systems, Electrical Engineering",Electrical Engineer Intern,NO,2+,"Electrical Engineering, Power Systems",Electrical,NO,None
+Zomato,7,"Python, Data Structures and Algorithms",Software Development Engineer,YES,2+,"Python, DSA, Algorithms","CSE, IT",YES,"OS, DBMS, OOP"
+Accolite,6,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA","CSE, IT",YES,"OS, DBMS, OOP"
+Arista,7.5,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, Algorithms","CSE, IT",YES,"OS, DBMS, OOP"
+Atlassian,7,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, Algorithms","CSE, IT",YES,"OS, DBMS, OOP"
+Brane Enterprises,8,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, Algorithms","CSE, IT",YES,"OS, DBMS, OOP"
+Cognam,7,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, Algorithms","CSE, IT",YES,"OS, DBMS, OOP"
+Google,Not Available,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, System Design","CSE, IT, Maths & Computing",YES,"OS, DBMS, OOP, Networks"
+Husk Power Systems,7,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, Algorithms","CSE, IT",YES,"OS, DBMS, OOP"
+MAQ Software,6,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, Software Development","CSE, IT",YES,"OS, DBMS, OOP"
+Money Forward,Not Available,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, Algorithms","CSE, IT",YES,"OS, DBMS, OOP"
+Mphasis Limited,6.3,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, Software Engineering","CSE, IT",YES,"OS, DBMS, OOP"
+Nucleus Software,6,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, Software Development","CSE, IT",YES,"OS, DBMS, OOP"
+Persistent,Not Available,"Python, C++, Data Structures and Algorithms",Software Engineer,YES,2+,"Python, C++, DSA, Software Engineering","CSE, IT",YES,"OS, DBMS, OOP"
+TCS R&I,7.5,"Python, C++, Data Structures and Algorithms",System Engineer,YES,2+,"Python, C++, DSA, System Engineering","CSE, IT",YES,"OS, DBMS, OOP, Networks"
+Barclays,7.0+,Risk Management,Banking Analyst Intern,NO,2+,"Risk Management, Banking, Finance","Finance, MBA, Economics",NO,None
+Accenture,7.0+,"SAP, Consulting, Structured Query Language",Information Technology Consulting Intern,NO,2+,"SAP, SQL, Consulting, IT Services","CSE, IT, ECE",NO,"DBMS, Networks"
+HCL Technologies,7.0+,"Software Development, Python",Software Developer Intern,NO,2+,"Python, Software Development","CSE, IT",YES,"OS, DBMS, OOP"
+Mindtree,7.0+,"Software Testing, Java",Software Tester Intern,NO,2+,"Java, Software Testing, QA","CSE, IT",YES,"OS, DBMS"
+ZS Associates,7,"Structured Query Language, Microsoft Excel, Python, Microsoft Power BI",Decision Analyst Associate,YES,2+,"SQL, Excel, Python, Power BI, Data Analysis","CSE, IT, Data Science",NO,DBMS
+Texas Instruments,Not Available,"Structured Query Language, Microsoft Excel, Python, Microsoft Power BI",Digital Design Engineer,YES,2+,"SQL, Excel, Python, Power BI, Digital Design","CSE, ECE, EE",NO,"OS, DBMS"
+Adobe,7.0+,"Web Development, User Experience/User Interface",Software Developer Intern,YES,2+,"Web Development, UI/UX, JavaScript","CSE, IT",NO,"OS, DBMS, Networks"

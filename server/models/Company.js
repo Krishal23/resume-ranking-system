@@ -1,3 +1,4 @@
+// server/models/Company.js
 import { Schema, model } from 'mongoose';
 
 export const CompanySchema = new Schema({
@@ -6,36 +7,50 @@ export const CompanySchema = new Schema({
     required: true,
     unique: true
   },
-  description: {
-    type: String
-  },
   cpi: {
     type: Number,
-    required: true
+    default: 0
   },
   skillSet: {
     type: [String],
-    required: true
+    default: []
+  },
+  internshipRole: {
+    type: String
+  },
+  visitsIITPatna: {
+    type: Boolean,
+    default: false
   },
   minProjects: {
     type: Number,
     default: 0
   },
   projectKeywords: {
-    type: [String]
+    type: [String],
+    default: []
   },
   branch: {
-    type: [String]
+    type: [String],
+    default: []
+  },
+  dsaRequired: {
+    type: Boolean,
+    default: false
   },
   coreSkills: {
-    type: [String]
+    type: [String],
+    default: []
+  },
+  description: {
+    type: String,
+    default:""
   },
   createdAt: {
     type: Date,
     default: Date.now
   }
 });
-
 
 const Company = model('Company', CompanySchema);
 export default Company;

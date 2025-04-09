@@ -3,40 +3,48 @@ import Resume from '../models/Resume.js';
 
 import { generateRankings } from '../services/rankGenerator.js';
 
+
 export async function createCompany(req, res) {
   try {
     const {
       name,
-      description,
       cpi,
       skillSet,
+      internshipRole,
+      visitsIITPatna,
       minProjects,
       projectKeywords,
       branch,
-      coreSkills
+      dsaRequired,
+      coreSkills,
+      description
     } = req.body;
     
-    // company already exists??
+    // Check if company already exists
     let company = await Company.findOne({ name });
     
     if (company) {
       return res.status(400).json({ msg: 'Company already exists' });
     }
     
+    // Create a new company
     company = new Company({
       name,
-      description,
-      cpi,
+      cpi: cpi || 0,
       skillSet: Array.isArray(skillSet) ? skillSet : skillSet.split(',').map(s => s.trim()),
-      minProjects,
+      internshipRole,
+      visitsIITPatna: visitsIITPatna === 'YES' || visitsIITPatna === true,
+      minProjects: minProjects || 0,
       projectKeywords: Array.isArray(projectKeywords) ? projectKeywords : projectKeywords.split(',').map(k => k.trim()),
       branch: Array.isArray(branch) ? branch : branch.split(',').map(b => b.trim()),
-      coreSkills: Array.isArray(coreSkills) ? coreSkills : coreSkills.split(',').map(s => s.trim())
+      dsaRequired: dsaRequired === 'YES' || dsaRequired === true,
+      coreSkills: Array.isArray(coreSkills) ? coreSkills : (coreSkills && coreSkills !== 'None' ? coreSkills.split(',').map(s => s.trim()) : []),
+      description
     });
     
     await company.save();
     
-    // Update rankings
+    // Update rankings for all existing resumes
     const resumes = await Resume.find();
     
     for (const resume of resumes) {
@@ -61,7 +69,7 @@ export async function createCompany(req, res) {
           rank: resume.rankings.length + 1
         });
         
-        // Sort rankings
+        // Sort rankings by score
         resume.rankings.sort((a, b) => b.score - a.score);
         
         // Update ranks
@@ -79,6 +87,7 @@ export async function createCompany(req, res) {
     res.status(500).json({ msg: 'Server error', error: error.message });
   }
 }
+
 
 
 export async function getCompanies(req, res) {
@@ -116,33 +125,39 @@ export async function updateCompany(req, res) {
   try {
     const {
       name,
-      description,
       cpi,
       skillSet,
+      internshipRole,
+      visitsIITPatna,
       minProjects,
       projectKeywords,
       branch,
-      coreSkills
+      dsaRequired,
+      coreSkills,
+      description
     } = req.body;
     
     // company object
     const companyFields = {};
     if (name) companyFields.name = name;
-    if (description) companyFields.description = description;
-    if (cpi) companyFields.cpi = cpi;
+    if (cpi !== undefined) companyFields.cpi = cpi;
     if (skillSet) {
       companyFields.skillSet = Array.isArray(skillSet) ? skillSet : skillSet.split(',').map(s => s.trim());
     }
-    if (minProjects) companyFields.minProjects = minProjects;
+    if (internshipRole !== undefined) companyFields.internshipRole = internshipRole;
+    if (visitsIITPatna !== undefined) companyFields.visitsIITPatna = visitsIITPatna === 'YES' || visitsIITPatna === true;
+    if (minProjects !== undefined) companyFields.minProjects = minProjects;
     if (projectKeywords) {
       companyFields.projectKeywords = Array.isArray(projectKeywords) ? projectKeywords : projectKeywords.split(',').map(k => k.trim());
     }
     if (branch) {
       companyFields.branch = Array.isArray(branch) ? branch : branch.split(',').map(b => b.trim());
     }
+    if (dsaRequired !== undefined) companyFields.dsaRequired = dsaRequired === 'YES' || dsaRequired === true;
     if (coreSkills) {
-      companyFields.coreSkills = Array.isArray(coreSkills) ? coreSkills : coreSkills.split(',').map(s => s.trim());
+      companyFields.coreSkills = Array.isArray(coreSkills) ? coreSkills : (coreSkills && coreSkills !== 'None' ? coreSkills.split(',').map(s => s.trim()) : []);
     }
+    if (description !== undefined) companyFields.description = description;
     
     // Update the company
     let company = await Company.findById(req.params.id);
@@ -156,6 +171,7 @@ export async function updateCompany(req, res) {
       { $set: companyFields },
       { new: true }
     );
+    
     
     // Update rankings for all existing resumes
     const resumes = await Resume.find();

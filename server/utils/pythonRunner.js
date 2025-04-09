@@ -4,8 +4,6 @@ import { fileURLToPath } from 'url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
-
-
 export const runPythonScript = (scriptName, args = []) => {
   return new Promise((resolve, reject) => {
     const scriptPath = join(__dirname, '..', 'python', scriptName);
@@ -31,13 +29,25 @@ export const runPythonScript = (scriptName, args = []) => {
       }
       
       try {
-        const parsedResult = JSON.parse(result);
+        // Find the JSON part of the output (starts with "{")
+        const jsonStart = result.indexOf('{');
+        if (jsonStart === -1) {
+          throw new Error('No JSON found in output');
+        }
+        
+        // Extract only the JSON part
+        const jsonString = result.substring(jsonStart);
+        
+        // For debugging
+        console.log("Attempting to parse JSON:", jsonString.substring(0, 100) + "...");
+        
+        const parsedResult = JSON.parse(jsonString);
         resolve(parsedResult);
       } catch (error) {
         console.error('Failed to parse Python script output:', error);
-        reject(new Error(`Failed to parse Python script output: ${result}`));
+        console.error('Raw output first 200 chars:', result.substring(0, 200));
+        reject(new Error(`Failed to parse Python script output: ${error.message}`));
       }
     });
   });
 };
-

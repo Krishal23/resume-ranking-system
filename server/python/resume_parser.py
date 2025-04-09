@@ -172,5 +172,6 @@ if __name__ == "__main__":
     
     resume_text = sys.argv[1]
     result = parse_resume(resume_text)
+    # print(result)
 
     print(json.dumps(result))

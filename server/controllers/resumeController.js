@@ -12,37 +12,70 @@ export async function uploadResume(req, res) {
     }
 
     const filePath = req.file.path;
-
+    
+    // Parse the resume
     const parsedResume = await parseResumeFile(filePath);
-
+    
+    // Get all companies from the database
     const companies = await Company.find();
-
+    
     if (companies.length === 0) {
       return res.status(404).json({ msg: 'No companies found in the database' });
     }
     
-    // rankings for all companies
+    // Generate rankings for all companies
+    // console.log("parsedddd=resume=>>>>",parsedResume)
     const rankings = await generateRankings(parsedResume, companies);
-
-    const resume = new Resume({
-      name: parsedResume.name || 'Unknown',
-      email: parsedResume.email || 'unknown@example.com',
-      phone: parsedResume.phone || '',
-      education: parsedResume.education || [],
-      skills: parsedResume.skills || [],
-      experience: parsedResume.experience || [],
-      projects: parsedResume.projects || [],
-      rankings: rankings,
-      resumeText: parsedResume.resumeText,
-      filePath: filePath
-    });
-
+    
+    // Check if a resume with this email already exists
+    let resume = await Resume.findOne({ email: parsedResume.email });
+    let isUpdate = false;
+    
+    if (resume) {
+      // Update existing resume
+      isUpdate = true;
+      
+      // Update resume fields
+      resume.name = parsedResume.name || resume.name;
+      resume.phone = parsedResume.phone || resume.phone;
+      resume.education = parsedResume.education || resume.education;
+      resume.skills = parsedResume.skills || resume.skills;
+      resume.experience = parsedResume.experience || resume.experience;
+      resume.projects = parsedResume.projects || resume.projects;
+      resume.rankings = rankings;
+      resume.resumeText = parsedResume.resumeText;
+      
+      // If there was a previous file, delete it
+      if (resume.filePath && resume.filePath !== filePath) {
+        try {
+          fs.unlinkSync(resume.filePath);
+        } catch (err) {
+          console.error('Error deleting previous resume file:', err);
+        }
+      }
+      
+      resume.filePath = filePath;
+    } else {
+      // Create a new resume
+      resume = new Resume({
+        name: parsedResume.name || 'Unknown',
+        email: parsedResume.email || 'unknown@example.com',
+        phone: parsedResume.phone || '',
+        education: parsedResume.education || [],
+        skills: parsedResume.skills || [],
+        experience: parsedResume.experience || [],
+        projects: parsedResume.projects || [],
+        rankings: rankings,
+        resumeText: parsedResume.resumeText,
+        filePath: filePath
+      });
+    }
+    
     // Save the resume
     await resume.save();
     
     res.json({
-      msg: 'Resume uploaded and processed successfully',
-      resume,
+      msg: isUpdate ? 'Resume updated successfully' : 'Resume uploaded and processed successfully',
       resume: {
         id: resume._id,
         name: resume.name,
@@ -59,6 +92,7 @@ export async function uploadResume(req, res) {
     res.status(500).json({ msg: 'Server error', error: error.message });
   }
 }
+
 
 export async function getResumes(req, res) {
   try {
