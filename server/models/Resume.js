@@ -20,7 +20,7 @@ const ResumeSchema = new Schema({
   email: {
     type: String,
     required: true,
-    // unique: true
+    unique: true
   },
   phone: {
     type: String
@@ -31,7 +31,7 @@ const ResumeSchema = new Schema({
     year: String,
     gpa: Number
   }],
-  skills: [skillsSchema],
+  skills: [String],
   experience: [{
     company: String,
     position: String,

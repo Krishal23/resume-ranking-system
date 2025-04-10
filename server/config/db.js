@@ -6,9 +6,9 @@ dotenv.config();
 const connectDB = async () => {
   try {
     await connect(process.env.MONGO_URI);
-    console.log('✅ MongoDB Connected...');
+    console.log('MongoDB Connected...');
   } catch (err) {
-    console.error('❌ MongoDB Connection Error:', err.message);
+    console.error('MongoDB Connection Error:', err.message);
     process.exit(1);
   }
 };

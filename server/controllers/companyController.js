@@ -20,14 +20,14 @@ export async function createCompany(req, res) {
       description
     } = req.body;
     
-    // Check if company already exists
+    // company exists??
     let company = await Company.findOne({ name });
     
     if (company) {
       return res.status(400).json({ msg: 'Company already exists' });
     }
     
-    // Create a new company
+    // new company if not exists
     company = new Company({
       name,
       cpi: cpi || 0,
@@ -44,7 +44,7 @@ export async function createCompany(req, res) {
     
     await company.save();
     
-    // Update rankings for all existing resumes
+    // get all resumes from Database
     const resumes = await Resume.find();
     
     for (const resume of resumes) {
@@ -59,10 +59,11 @@ export async function createCompany(req, res) {
         resumeText: resume.resumeText
       };
       
+      //generating rankings for all
       const rankings = await generateRankings(resumeData, [company]);
       
+
       if (rankings.length > 0) {
-        // Add the new ranking to the resume
         resume.rankings.push({
           company: company._id,
           score: rankings[0].score,

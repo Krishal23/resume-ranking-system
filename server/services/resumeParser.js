@@ -19,7 +19,7 @@ export const parseResumeFile = async (filePath) => {
     const resumeText = await extractTextFromFile(filePath);
 
     // console.log("parsedddd=resume=>>>>",resumeText)
-    const parsedResume = await parseResumeText(resumeText);
+    const parsedResume = await parseResumeText(filePath);
 
     
     return {

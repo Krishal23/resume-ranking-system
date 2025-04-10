@@ -18,30 +18,20 @@ export const generateRankingScore = async (resumeData, companyData) => {
     // console.log(resumeData)
   
     const transformedResumeData = {
-      CPI: resumeData.education && resumeData.education.length > 0 ? 
-           resumeData.education[0].cpi || 0 : 0,
-      Skill_Set: new Set([
-        ...(resumeData.skills?.programming_languages || []),
-        ...(resumeData.skills?.frameworks || []),
-        ...(resumeData.skills?.tools || []),
-        ...(resumeData.skills?.libraries || [])
-      ]),
-      Projects: resumeData.projects ? resumeData.projects.length : 0,
-      Project_Keywords: new Set(resumeData.projects ? 
-        resumeData.projects.flatMap(p => p.technologies || []) : []),
-      Mobile: resumeData.phone || "",
-      Email: resumeData.email ? resumeData.email.split("GitHub")[0] : "",
-      Experience: 0, // No experience data in the parsed resume
-      Core_Skills: new Set([
-        ...(resumeData.skills?.programming_languages || []),
-        ...(resumeData.skills?.frameworks || []),
-        ...(resumeData.skills?.tools || [])
-      ]),
-      Branch: (resumeData.education?.[0]?.degree)?.includes(' in ') 
-              ? resumeData.education[0].degree.split(' in ')[1] 
-              : resumeData.education?.[0]?.degree || ''
-
+      CPI: resumeData['CPI/GPA'] || 0,
+      Skill_Set: new Set(resumeData.Skills || []),
+      Projects: resumeData.No_of_Projects || 0,
+      Project_Keywords: new Set(resumeData.Project_Keywords || []),
+      Mobile: resumeData.Mobile_Number || "",
+      Email: resumeData.Email_ID || "",
+      Experience: resumeData.Experience === 'Yes' ? 1 : 0,
+      Core_Skills: new Set(resumeData.Core_Computer_Skills ? 
+        resumeData.Core_Computer_Skills.split(',').map(skill => skill.trim()) : []),
+      Branch: resumeData.Branch || ''
     };
+    
+
+    // console.log(transformedResumeData)
 
     //preparing json
     const prepareForJSON = (obj) => {
@@ -66,6 +56,7 @@ export const generateRankingScore = async (resumeData, companyData) => {
     const companyJson = JSON.stringify(jsonReadyCompanyData);
 
     const result = await runPythonScript('rank_generator.py', [resumeJson, companyJson]);
+    console.log(result)
     
     if (result.error) {
       throw new Error(result.error);

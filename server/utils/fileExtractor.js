@@ -26,7 +26,7 @@ export const extractTextFromFile = async (filePath) => {
       return readFileSync(filePath, 'utf8');
     case '.docx':
     case '.doc':
-      // Implement docx extraction if needed
+
       throw new Error('DOCX/DOC extraction not implemented');
     default:
       throw new Error(`Unsupported file format: ${extension}`);

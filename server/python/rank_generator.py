@@ -3,16 +3,7 @@ import json
 import re
 
 def calculate_score(resume_data, company_data):
-    """
-    Calculate the overall matching score between a resume and company requirements.
-    
-    Args:
-        resume_data: Dictionary containing resume information
-        company_data: Dictionary containing company requirements
-        
-    Returns:
-        Float: The calculated matching score (0-100)
-    """
+    # print(resume_data)
     # Weight factors for different criteria
     weights = {
         'skills': 0.35,
@@ -55,17 +46,6 @@ def calculate_score(resume_data, company_data):
     return round(total_score, 2)
 
 def score_skills(resume_skills, company_skills, core_skills):
-    """
-    Calculate skills match score based on resume skills and company required skills.
-    
-    Args:
-        resume_skills: List of skills from the resume
-        company_skills: List of skills required by the company
-        core_skills: List of core skills required by the company
-        
-    Returns:
-        Float: Skills match score (0-100)
-    """
     if not resume_skills or not company_skills:
         return 0
     
@@ -87,18 +67,6 @@ def score_skills(resume_skills, company_skills, core_skills):
     return skill_score + core_skill_score
 
 def score_education(cpi, min_cpi, required_branches, resume_branch):
-    """
-    Calculate education match score based on CPI and branch.
-    
-    Args:
-        cpi: Student's CPI/GPA
-        min_cpi: Minimum CPI required by company
-        required_branches: List of branches accepted by company
-        resume_branch: Student's branch
-        
-    Returns:
-        Float: Education match score (0-100)
-    """
     if not cpi:
         return 0
     
@@ -123,18 +91,6 @@ def score_education(cpi, min_cpi, required_branches, resume_branch):
     return cpi_score + branch_score
 
 def score_projects(project_count, min_projects, company_keywords, resume_keywords):
-    """
-    Calculate project match score based on count and keyword matches.
-    
-    Args:
-        project_count: Number of projects in the resume
-        min_projects: Minimum number of projects required by company
-        company_keywords: List of keywords the company is looking for
-        resume_keywords: List of keywords from resume projects
-        
-    Returns:
-        Float: Project match score (0-100)
-    """
     if project_count == 0:
         return 0
     
@@ -159,15 +115,6 @@ def score_projects(project_count, min_projects, company_keywords, resume_keyword
     return project_count_score + keyword_score
 
 def score_experience(experience_count):
-    """
-    Calculate experience score based on number of experiences.
-    
-    Args:
-        experience_count: Number of work experiences
-        
-    Returns:
-        Float: Experience score (0-100)
-    """
     if experience_count >= 3:
         return 100
     elif experience_count == 2:
@@ -185,6 +132,7 @@ if __name__ == "__main__":
     try:
         resume_data = json.loads(sys.argv[1])
         company_data = json.loads(sys.argv[2])
+        # print(resume_data)
         
         score = calculate_score(resume_data, company_data)
         print(json.dumps({"score": score}))
