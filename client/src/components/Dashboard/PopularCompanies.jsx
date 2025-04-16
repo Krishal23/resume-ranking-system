@@ -108,7 +108,7 @@ const PopularCompanies = () => {
               <div className="flex items-start justify-between">
                 <div className="flex items-center">
                   <div
-                    className={`w-12 h-12 bg-${getColorClass(index)}-100 dark:bg-${getColorClass(index)}-900/30 text-${getColorClass(index)}-600 dark:text-${getColorClass(index)}-400 rounded-lg flex items-center justify-center mr-4`}
+                    className={`w-12 h-12 bg-${getColorClass(1)}-100 dark:bg-${getColorClass(1)}-900/30 text-${getColorClass(0)}-600 dark:text-${getColorClass(index)}-400 rounded-lg flex items-center justify-center mr-4`}
                   >
                     {getCompanyIcon(company)}
                   </div>
@@ -123,7 +123,7 @@ const PopularCompanies = () => {
                 </div>
               </div>
                 <div className="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 text-xs font-medium py-1 px-2 rounded">
-                  IIT Patna: {company.visitsIITPatna ? "Yes" : "No"}
+                  Visits IIT Patna: {company.visitsIITPatna ? "Yes" : "No"}
                 </div>
               <div className="mt-4">
                 <div className="flex justify-between text-sm mb-1">

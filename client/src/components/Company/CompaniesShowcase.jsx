@@ -45,7 +45,7 @@ const CompaniesShowcase = ({ rankings }) => {
     };
 
     fetchCompanies();
-  }, []); 
+  }, []);
 
 
   // Filter and sort companies
@@ -73,7 +73,7 @@ const CompaniesShowcase = ({ rankings }) => {
   const calculateCompatibilityScore = (company) => {
     let score = 0;
     if (company.cpi) {
-      score += (10 - company.cpi) * 10; 
+      score += (10 - company.cpi) * 10;
     }
 
     if (company.skillSet && company.skillSet.length) {
@@ -127,28 +127,28 @@ const CompaniesShowcase = ({ rankings }) => {
 
   const containerVariants = {
     hidden: { opacity: 0 },
-    visible: { 
+    visible: {
       opacity: 1,
-      transition: { 
+      transition: {
         staggerChildren: 0.1
       }
     }
   };
-  
+
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
-    visible: { 
-      y: 0, 
+    visible: {
+      y: 0,
       opacity: 1,
       transition: { type: "spring", stiffness: 100 }
     },
-    hover: { 
+    hover: {
       scale: 1.03,
       boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
       transition: { type: "spring", stiffness: 400, damping: 10 }
     }
   };
-  
+
   return (
     <motion.section
       initial={{ opacity: 0, y: 20 }}
@@ -269,6 +269,9 @@ const CompaniesShowcase = ({ rankings }) => {
                   </div>
                 </div>
 
+                <div className="mb-4">
+                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">Visits IIt Patna: {company.visitsIITPatna ? "Yes" : "No"}</p>
+                </div>
                 {/* CPI Requirement */}
                 {company.cpi && (
                   <div className="mb-4">

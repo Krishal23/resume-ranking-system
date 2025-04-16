@@ -53,7 +53,7 @@ const ResumeUploader = () => {
 
   return (
     <div className="max-w-xl mx-auto">
-      <form onSubmit={handleSubmit} className="bg-white dark:bg-gray-800 shadow-md rounded px-8 pt-6 pb-8 mb-4">
+      <form onSubmit={handleSubmit} className="bg-white dark:bg-black shadow-3xl rounded px-8 pt-6 pb-8 mb-4">
         <div className="flex justify-center mb-10">
           <button
             type="button"

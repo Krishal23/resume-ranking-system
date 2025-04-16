@@ -18,7 +18,7 @@ const Dashboard = () => {
         </div>
         
         
-        <div className=" p-6 transform hover:shadow-2xl transition-all duration-300 animate-fade-in-up">
+        <div className=" p-6 transform hover:shadow-2xl dark:shadow-zinc-800 transition-all duration-300 animate-fade-in-up">
         
           <ResumeUploader />
         </div>

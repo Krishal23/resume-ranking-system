@@ -35,7 +35,7 @@ fs.createReadStream(path.join(__dirname, '../data/companies.csv'))
           cpi: row['Minimum CPI/GPA'] === 'Not Available' ? 0 : parseFloat(row['Minimum CPI/GPA']) || 0,
           skillSet: row['Required Skills'] ? row['Required Skills'].split(',').map(s => s.trim()) : [],
           internshipRole: row['Internship Role'],
-          visitsIITPatna: row['Visits IIT Patna'] === 'YES',
+          visitsIITPatna: row['Visits IIT Patna '] === 'YES',
           minProjects: row['No of Projects'] ? parseInt(row['No of Projects']) : 0,
           projectKeywords: row['Key words in project'] ? row['Key words in project'].split(',').map(k => k.trim()) : [],
           branch: row['Branches Invited'] ? row['Branches Invited'].split(',').map(b => b.trim()) : [],
