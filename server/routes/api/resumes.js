@@ -28,8 +28,10 @@ const fileFilter = (req, file, cb) => {
         cb(null, true);
     } else {
         cb(new Error('Invalid file type. Only PDF, DOCX, DOC, and TXT are allowed.'));
-    }
-};
+    } // <<< --- ADD THE MISSING '}' HERE
+}; // <<< --- This '};' now correctly closes the fileFilter function.
+
+
 
 const upload = multer({ storage, fileFilter });
 
