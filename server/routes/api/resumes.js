@@ -45,14 +45,14 @@ router.post(
     upload.single('resume'),
     uploadResume
 );
-// router.get(
-//     '/:id', 
-//     getResumeById
-// );
-// router.delete(
-//     '/:id', 
-//     // auth, 
-//     deleteResume
-// );
+router.get(
+    '/:id', 
+    getResumeById
+);
+router.delete(
+    '/:id', 
+    // auth, 
+    deleteResume
+);
 
 export default router;

@@ -13,20 +13,20 @@ router.get(
     '/', 
     getCompanies
 );
-// router.get(
-//     '/:id', 
-//     getCompanyById
-// );
-// router.put(
-//     '/:id', 
-//     // auth, 
-//     updateCompany
-// );
-// router.delete(
-//     '/:id', 
-//     // auth, 
-//     deleteCompany
-// );
+router.get(
+    '/:id', 
+    getCompanyById
+);
+router.put(
+    '/:id', 
+    // auth, 
+    updateCompany
+);
+router.delete(
+    '/:id', 
+    // auth, 
+    deleteCompany
+);
 // router.get(
 //     '/:id/resumes', 
 //     // auth, 
