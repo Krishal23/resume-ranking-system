@@ -26,20 +26,20 @@ app.use(json({ extended: false }));
 app.use('/api/resumes', resumesRouter);
 app.use('/api/companies', companiesRouter);
 
-app.all('/api/:restOfApi*', (req, res) => {
-  res.status(404).send('API Not Found');
-});
+// app.all('/api/:restOfApi*', (req, res) => {
+//   res.status(404).send('API Not Found');
+// });
 
-if (process.env.NODE_ENV === 'production') {
-  app.use(serveStatic('client/build'));
-  app.get('/:clientRoute*', (req, res) => {
-    res.sendFile(resolve(process.cwd(), 'client', 'build', 'index.html'));
-  });
-} else {
-  app.all('/:fallback*', (req, res) => {
-    res.status(404).send('Not Found');
-  });
-} // This closing brace for the 'else' block seems correct in this snippet.
+// if (process.env.NODE_ENV === 'production') {
+//   app.use(serveStatic('client/build'));
+//   app.get('/:clientRoute*', (req, res) => {
+//     res.sendFile(resolve(process.cwd(), 'client', 'build', 'index.html'));
+//   });
+// } else {
+//   app.all('/:fallback*', (req, res) => {
+//     res.status(404).send('Not Found');
+//   });
+// } // This closing brace for the 'else' block seems correct in this snippet.
 
 // Error handler
 app.use((err, req, res, next) => {
