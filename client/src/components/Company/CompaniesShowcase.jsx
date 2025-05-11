@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import  { useEffect, useState } from 'react';
 import { motion } from "framer-motion";
 import { Skeleton } from "../../components/ui/skeleton";
-import { FaBuilding, FaSearch, FaStar, FaFilter } from 'react-icons/fa';
+import { FaBuilding, FaSearch} from 'react-icons/fa';
 import { getCompanies } from '../../services/api';
 
 const CompaniesShowcase = ({ rankings }) => {
@@ -10,7 +10,7 @@ const CompaniesShowcase = ({ rankings }) => {
   const [error, setError] = useState(null);
   const [companiesData, setCompaniesData] = useState([]);
   const [industryFilter, setIndustryFilter] = useState('All');
-  const [sortBy, setSortBy] = useState('name');
+  const [sortBy, ] = useState('name');
 
   useEffect(() => {
     const fetchCompanies = async () => {

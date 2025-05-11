@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { IoChevronForward, IoChevronBack, IoArrowUp, IoArrowDown } from "react-icons/io5";
 
 const CompanyRankings = ({ rankings }) => {
-  const [companies, setCompanies] = useState({});
+  const [, setCompanies] = useState({});
   const [sortField, setSortField] = useState("rank");
   const [sortDirection, setSortDirection] = useState("asc");
   const [currentPage, setCurrentPage] = useState(1);

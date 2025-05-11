@@ -9,7 +9,7 @@ import SkillsSection from './SkillsSection';
 import EducationSection from './EducationSection';
 import ExperienceSection from './ExperienceSection';
 import ProjectsSection from './ProjectsSection';
-import CompaniesShowcase from '../Company/CompaniesShowcase';
+// import CompaniesShowcase from '../Company/CompaniesShowcase';
 
 const ResumeAnalysis = () => {
     const [resumeData, setResumeData] = useState(null);
@@ -52,6 +52,7 @@ const ResumeAnalysis = () => {
             </div>
         </div>
     );
+
     return (
         <div className="py-12 bg-gray-50 dark:bg-gradient-kinsta min-h-screen">
             <div className="container mx-auto px-4">

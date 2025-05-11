@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import  { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { ArrowRight, Building2, Briefcase, Code, Server } from "lucide-react";
 import { Skeleton } from "../ui/skeleton";
@@ -13,8 +13,8 @@ const cardHover = {
 const PopularCompanies = () => {
   const [companies, setCompanies] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState(null);
-  const [showAll, setShowAll] = useState(false);
+  const [, setError] = useState(null);
+  const [showAll, ] = useState(false);
 
   useEffect(() => {
     const fetchCompanies = async () => {
@@ -55,6 +55,7 @@ const PopularCompanies = () => {
   };
 
   const displayedCompanies = showAll ? companies : companies.slice(0, 6);
+  console.log(displayedCompanies)
 
   return (
     <motion.section
@@ -122,26 +123,26 @@ const PopularCompanies = () => {
                   </div>
                 </div>
               </div>
-                <div className="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-primary-300 text-xs font-medium py-1 px-2 rounded">
+                <div className="bg-primary-100 dark:bg-primary-900/30 text-primary-800 dark:text-white text-xs font-medium py-1 px-2 rounded">
                   Visits IIT Patna: {company.visitsIITPatna ? "Yes" : "No"}
                 </div>
               <div className="mt-4">
                 <div className="flex justify-between text-sm mb-1">
                   <span className="text-slate-600 dark:text-slate-400">Min. CPI/GPA</span>
                   <span className="font-medium text-slate-900 dark:text-slate-200">
-                    {company.minCpi || "Not Available"}
+                    {company?.cpi || "Not Available"}
                   </span>
                 </div>
-                <div className="flex justify-between text-sm mb-1">
+                <div className="flex justify-between gap-10  text-sm mb-1">
                   <span className="text-slate-600 dark:text-slate-400">Required Skills</span>
-                  <span className="font-medium text-slate-900 dark:text-slate-200">
-                    {(company.requiredSkills || []).slice(0, 3).join(", ") || "None"}
+                  <span className="font-medium  text-slate-900 dark:text-slate-200">
+                    {(company?.skillSet || []).slice(0, 3).join(", ") || "None"}
                   </span>
                 </div>
-                <div className="flex justify-between text-sm">
+                <div className="flex justify-between  text-sm">
                   <span className="text-slate-600 dark:text-slate-400">Branches</span>
                   <span className="font-medium text-slate-900 dark:text-slate-200">
-                    {(company.branchesInvited || []).slice(0, 3).join(", ") || "Any"}
+                    {(company?.branch || []).slice(0, 3).join(", ") || "Any"}
                   </span>
                 </div>
               </div>

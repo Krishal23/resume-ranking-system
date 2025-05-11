@@ -22,7 +22,7 @@ const EducationSection = ({ education }) => {
             <h3 className="font-semibold text-lg text-gray-700 dark:text-gray-300">{edu.degree}</h3>
             <p className="text-indigo-600 dark:text-indigo-400">{edu.institution}</p>
             <div className="flex flex-wrap gap-4 mt-1">
-              <p className="text-sm text-gray-600 dark:text-gray-400">Year: {edu.year}</p>
+              {/* <p className="text-sm text-gray-600 dark:text-gray-400">Year: {edu.year}</p> */}
               {edu.gpa && <p className="text-sm text-gray-600 dark:text-gray-400">GPA: {edu.gpa}</p>}
             </div>
           </li>
