@@ -26,6 +26,14 @@ app.use(json({ extended: false }));
 //routes
 app.use('/api/resumes', resumesRouter);
 app.use('/api/companies', companiesRouter);
+app.all('/{*any}', (req, res, next) => {
+  res.status(404).send('Not Found');
+});
+app.use((err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).send('Something broke!');
+});
+
 
 if (process.env.NODE_ENV === 'production') {
   app.use(serveStatic('client/build'));
