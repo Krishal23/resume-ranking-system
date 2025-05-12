@@ -9,6 +9,9 @@ import path from 'path';
 
 export async function uploadResume(req, res) {
   try {
+
+    console.log("hello from uploadResume");
+
     if (!req.file) {
       return res.status(400).json({ msg: 'No file uploaded' });
     }

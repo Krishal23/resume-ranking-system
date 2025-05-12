@@ -9,7 +9,7 @@ const CompaniesShowcase = ({ rankings }) => {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [companiesData, setCompaniesData] = useState([]);
-  const [industryFilter, setIndustryFilter] = useState('All');
+  const [industryFilter, ] = useState('All');
   const [sortBy, ] = useState('name');
 
   useEffect(() => {
