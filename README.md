@@ -31,7 +31,7 @@
 
  ### 1. Clone the Repository
  - git clone https://github.com/Krishal23/resume-ranking-system.git
- - cd resume-ranking
+ - cd resume-ranking-system
 
 
 
