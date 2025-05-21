@@ -30,7 +30,7 @@
  
 
  ### 1. Clone the Repository
- - git clone https://github.com/your-username/resume-ranking.git
+ - git clone [https://github.com/your-username/resume-ranking.git]
  - cd resume-ranking
 
 
